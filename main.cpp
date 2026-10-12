@@ -16,6 +16,8 @@ int main() {
     const double INR_Pirkti = 101.3862;
     const double INR_Parduoti = 107.8546;
 
+    cout << fixed << setprecision(2);
+
     int choice;
     int currencyChoice;
     double amountEUR = 0;
@@ -138,6 +140,7 @@ int main() {
                         }
                     }
                 } while (currencyChoice != 4);
+                break;
             }
         }
     } while (choice != 4);
