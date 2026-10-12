@@ -18,7 +18,7 @@ int main() {
 
     int choice;
     int currencyChoice;
-    double amount;
+    double amountEUR = 0;
 
     do {
         cout << "\n--- MENU ---\n" << endl;
@@ -30,6 +30,7 @@ int main() {
         cin >> choice;
 
         switch(choice) {
+            // palyginti
             case 1: {
                 do {
                     cout << "Pasirinkite kokia valiutos" << endl;
@@ -54,9 +55,8 @@ int main() {
                 } while (currencyChoice != 4);
                 break;
             }
-            // parduoti
+            // pirkti
             case 2: {
-                double amountEUR = 0;
                 do {
                     cout << "Pasirinkite kokia valiutos" << endl;
                     cout << "1. GBP" << endl;
@@ -94,6 +94,50 @@ int main() {
                     }
                 } while (currencyChoice != 4);
                 break;
+            }
+            // parduoti
+            case 3: {
+                double amountGBP;
+                double amountUSD;
+                double amountINR;
+                do {
+                    cout << "Pasinrikite valiutos kokia norite parduoti" << endl;
+                    cout << "1. GBP" << endl;
+                    cout << "2. USD" << endl;
+                    cout << "3. INR" << endl;
+                    cout << "4. Atgal i menu" << endl;
+                    cin >> currencyChoice;
+
+                    if (currencyChoice == 1) {
+                        cout << "Kiek norite parduoti GBP i eur?" << endl;
+                        cin >> amountGBP;
+                        if (amountGBP > 0) {
+                            cout << amountGBP / GBP_Parduoti << " Here you go" << endl;
+                        } else {
+                            cout << "Jus ne turite pinigu" << endl;
+                        }
+                    }
+
+                    else if (currencyChoice == 2) {
+                        cout << "Kiek norite parduoti USD i eur?" << endl;
+                        cin >> amountUSD;
+                        if (amountUSD > 0) {
+                            cout << amountUSD / USD_Parduoti << " Here you go" << endl;
+                        } else {
+                            cout << "Jus ne turite pinigu" << endl;
+                        }
+                    }
+
+                    else if (currencyChoice == 3) {
+                        cout << "Kiek norite parduoti INR i eur?" << endl;
+                        cin >> amountINR;
+                        if (amountINR > 0) {
+                            cout << amountINR / INR_Parduoti << " Here you go" << endl;
+                        } else {
+                            cout << "Jus ne turite pinigu" << endl;
+                        }
+                    }
+                } while (currencyChoice != 4);
             }
         }
     } while (choice != 4);
